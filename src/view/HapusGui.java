@@ -1,6 +1,6 @@
 package view;
 
-import controller.AllObjController;
+import controller.AllObjectController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,11 +19,11 @@ public class HapusGui {
 
     public HapusGui() {
         //tabel
-        tabelakun.setModel(AllObjController.dataKaryawanController.DaftarKaryawan());
+        tabelakun.setModel(AllObjectController.dataKaryawanController.DaftarKaryawan());
 
         scrollstaff.setBounds(470, 180, 500, 200);
 
-        Hapus.setSize(500, 500);
+        Hapus.setSize(1000, 500);
         Hapus.setLayout(null);
         Hapus.add(scrollstaff);
 
@@ -60,7 +60,7 @@ public class HapusGui {
             public void actionPerformed(ActionEvent e) {
                 try {
                     int index = Integer.parseInt(textpilih.getText());
-                    AllObjController.dataKaryawanController.remove(index);
+                    AllObjectController.dataKaryawanController.remove(index);
 
                     JOptionPane.showMessageDialog(null, " Data Berhasil Dihapus ", "information", JOptionPane.INFORMATION_MESSAGE);
                     HapusGui hapus = new HapusGui();

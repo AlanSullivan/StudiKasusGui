@@ -1,7 +1,5 @@
 package controller;
 
-import entity.DataKaryawanEntity;
-
-public class AllObjController {
+public class AllObjectController {
     public static DataKaryawanController dataKaryawanController = new DataKaryawanController();
 }

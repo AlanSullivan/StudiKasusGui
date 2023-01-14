@@ -1,6 +1,6 @@
 package view;
 
-import controller.AllObjController;
+import controller.AllObjectController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,21 +11,21 @@ public class EditKaryawanGui {
     JFrame baru = new JFrame();
     JLabel EditKaryawan, top;
     JTextField textnomorr, textpilih, textdatabaru;
-    JLabel labelidkursus, labelpilih, labeldatabaru, labelnomorr, Labeldata, LabelPassword, Labelumur, LabelName, LabelAlamat, kelaslabel, LabelNama;
-    JButton tambah, hapus, edit, exit;
-    JPasswordField passwordlogin, alamat;
+    JLabel labelpilih, labeldatabaru, labelnomorr, Labeldata, LabelName;
+    JButton edit, exit;
+
 
     JTable tabelakun = new JTable();
     JScrollPane scrollstaff = new JScrollPane(tabelakun);
 
     public EditKaryawanGui() {
-        baru.setSize(500, 500);
+        baru.setSize(1000, 500);
         baru.setLayout(null);
         baru.getContentPane().setBackground(Color.WHITE);
         scrollstaff.setBounds(470, 180, 500, 200);
 
 //Tabel
-        tabelakun.setModel(AllObjController.dataKaryawanController.DaftarKaryawan());
+        tabelakun.setModel(AllObjectController.dataKaryawanController.DaftarKaryawan());
         baru.add(scrollstaff);
 
         top = new JLabel("Edit Karyawan");
@@ -112,13 +112,13 @@ public class EditKaryawanGui {
                     int pilihH = Integer.parseInt(textpilih.getText());
                     switch (pilihH) {
                         case 1:
-                            AllObjController.dataKaryawanController.UpdateDAT(nomorrR,1, data);
+                            AllObjectController.dataKaryawanController.UpdateDAT(nomorrR,1, data);
                             break;
                         case 2:
-                            AllObjController.dataKaryawanController.UpdateDAT(nomorrR,2, data);
+                            AllObjectController.dataKaryawanController.UpdateDAT(nomorrR,2, data);
                             break;
                         case 3:
-                            AllObjController.dataKaryawanController.UpdateDAT(nomorrR,3, data);
+                            AllObjectController.dataKaryawanController.UpdateDAT(nomorrR,3, data);
                             break;
                         default:
                     }

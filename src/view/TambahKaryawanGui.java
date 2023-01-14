@@ -1,7 +1,6 @@
 package view;
 
-import controller.AllObjController;
-import entity.DataKaryawanEntity;
+import controller.AllObjectController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,11 +11,9 @@ public class TambahKaryawanGui {
     JFrame judul = new JFrame();
     JLabel tambahKaryawan, top;
 
-    JTextField textalamat,TextUsername, textnomor, textnomorr, textpilih, textdataba, textjabatan, textumur, textEmail, textkelas, textNama;
-    JLabel labelidkursus, labelpilih, labeldataba, labelnomor, labelnomorr, Labeldaftarm, Labeljabatan, Labelumur, LabelName, LabelAlamat, kelaslabel, LabelNama;
-    JButton tambah, hapus, edit, exit;
-    JPasswordField passwordlogin;
-
+    JTextField textalamat, textjabatan, textumur, textEmail, textNama;
+    JLabel Labeljabatan, Labelumur, LabelName, LabelAlamat, LabelNama;
+    JButton tambah, exit;
     JTable tabelakun = new JTable();
     JScrollPane scrollstaff = new JScrollPane(tabelakun);
 
@@ -33,7 +30,7 @@ public class TambahKaryawanGui {
         scrollstaff.setBounds(470, 180, 500, 200);
 
 //Tabel
-        tabelakun.setModel(AllObjController.dataKaryawanController.DaftarKaryawan());
+        tabelakun.setModel(AllObjectController.dataKaryawanController.DaftarKaryawan());
         judul.add(scrollstaff);
 
         tambahKaryawan = new JLabel("Daftar Karyawan");
@@ -116,13 +113,13 @@ public class TambahKaryawanGui {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 try {
-                    String email = textEmail.getText();
+                    String email   = textEmail.getText();
                     String jabatan = textjabatan.getText();
-                    String nama = textNama.getText();
-                    String alamat = textalamat.getText();
+                    String nama    = textNama.getText();
+                    String alamat  = textalamat.getText();
                     int umur = Integer.parseInt(textumur.getText());
-                    AllObjController.dataKaryawanController.tambahData(email,jabatan,nama,alamat,umur);
-                    tabelakun.setModel(AllObjController.dataKaryawanController.DaftarKaryawan());
+                    AllObjectController.dataKaryawanController.tambahData(email,jabatan,nama,alamat,umur);
+                    tabelakun.setModel(AllObjectController.dataKaryawanController.DaftarKaryawan());
                     JOptionPane.showMessageDialog(null, "Tambah Data Sukses ", "information", JOptionPane.INFORMATION_MESSAGE);
                 TambahKaryawanGui tambahKaryawanGui = new TambahKaryawanGui();
                 judul.dispose();
