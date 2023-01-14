@@ -2,7 +2,7 @@ import view.*;
 
 public class Main {
     public static void main(String[] args) {
-        AllObj.AdminModel.initialData();
+        AllObjectView.AdminModel.initialData();
     //     AdminKaryawanModel.initialData();
     //    AdminController admin = new AdminController();
     //    admin.menuToMain();

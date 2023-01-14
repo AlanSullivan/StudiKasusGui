@@ -66,7 +66,7 @@ public class LoginGui {
             public void actionPerformed(ActionEvent e) {
                 try {
 
-                    AllObj.adminControl.login(textkodelogin.getText(), passwordlogin.getText());
+                    AllObjectView.adminControl.login(textkodelogin.getText(), passwordlogin.getText());
                     JOptionPane.showMessageDialog(null, "selamat datang " , "information", JOptionPane.INFORMATION_MESSAGE);
                     kosong();
                     MenuGui mgui = new MenuGui();
